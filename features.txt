@@ -1,0 +1,5 @@
+# Works for : FIFA 15, FIFA 16, FIFA 17, FIFA 18, FIFA 19, FIFA 20
+Features of a Football Manager Helper:
+
+- Find players based on overall status and nationality
+- Find players for given release clause minimum and maximum
