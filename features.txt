@@ -3,3 +3,4 @@ Features of a Football Manager Helper:
 
 - Find players based on overall status and nationality
 - Find players for given release clause minimum and maximum
+- Find highest rated player of selected country
