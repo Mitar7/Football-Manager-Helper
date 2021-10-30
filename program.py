@@ -3,7 +3,7 @@ import pandas as pd
 import os
 
 flag = 0
-df = 0
+df = 0  # makes DataFrame public
 
 clearConsole = lambda: os.system('cls' if os.name in ('nt', 'dos') else 'clear')
 msg = """
@@ -11,8 +11,9 @@ msg = """
     1. Find players based on overall status and nationality
     2. Find players for given release clause minimum and maximum
     3. Find highest rated player of selected country
-    4. Find by position and rating
-    5. Exit program
+    4. Find by positions and rating 
+    5. List players by club
+    6. Exit program
 """
 
 
@@ -37,10 +38,16 @@ def highest_rated_player_of_selected_nationality(df):
 
 
 def player_by_position_and_rating(df):
+    print("(Add ',' and space between positions)")
     position = input('Please input player\'s position: ')
     rating = int(input('Please input rating: '))
     print(df[(df['player_positions'] == position) & (df['overall'] > rating)]
           [['long_name', 'overall', 'player_positions']])
+
+
+def players_by_club(df):
+    club = input('Please input a club: ')
+    print(df[df['club'] == club][['long_name', 'overall', 'player_positions']])
 
 
 def select_fifa():
@@ -82,6 +89,11 @@ def main_menu():
         clearConsole()
         main_menu()
     if x == 5:
+        players_by_club(df)
+        enter = input()
+        clearConsole()
+        main_menu()
+    if x == 6:
         exit()
 
 
